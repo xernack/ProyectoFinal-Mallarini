@@ -4,9 +4,18 @@
  CLIENTE
 {% endblock contenido_titulo %}
 
- 
+
 {% block contenido %}
+
+{% for object in clientes %}
+<h2> {{ cliente }} </h2>
+{% endfor %}
+ 
+
+
 <a href="{% url 'core:index' %}">Volver al inicio</a>
+
+
 {% endblock contenido %}
 
    
