@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block contenido_titulo %}
+ BUSQUEDA PRODUCTOS
+{% endblock contenido_titulo %}
+
+ 
+{% block contenido %}
+        
+<h2>Producto Nombre</h2>
+{% for producto in producto_nombre %}
+   <h1> {{ producto }} </h1>
+  
+{% endfor %}
+
+{% endblock contenido %}
+ 
+

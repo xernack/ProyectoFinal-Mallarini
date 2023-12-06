@@ -1,17 +1,17 @@
 {% extends 'core/base.html' %}
 
 {% block contenido_titulo %}
- CLIENTE
+ Crear Cliente
 {% endblock contenido_titulo %}
 
 {% block contenido %}
 
-{% for cliente in clientes %}
-<h2> {{ cliente.apellido }} </h2>
-<p> {{ cliente.nombre  }} </p>
+   <form method="post">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit"Z>Guardar</button>
+   </form>
 
-
-{% endfor %}
 
 {% endblock contenido %}
 
@@ -23,9 +23,3 @@
 
 
 {% endblock contenido2 %}
-
-   
-
-
-
-

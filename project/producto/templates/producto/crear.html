@@ -1,16 +1,18 @@
 {% extends 'core/base.html' %}
 
 {% block contenido_titulo %}
- PRODUCTO
+ Crear Producto
 {% endblock contenido_titulo %}
 
  
 {% block contenido %}
         
-{% for producto in productos %}
-   <h1> {{ producto.nombre }} </h1>
-   <p> {{ producto.categoria }} </p>
-{% endfor %}
+<form action="post">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Guardar</button>
+
+</form>
 
 {% endblock contenido %}
  

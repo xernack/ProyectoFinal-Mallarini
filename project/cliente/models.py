@@ -5,5 +5,5 @@ class Cliente(models.Model):
    apellido = models.CharField(max_length=100) 
 
    
-def __str__(self):
+   def __str__(self):
     return f"{self.nombre} {self.apellido}"
