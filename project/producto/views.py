@@ -9,20 +9,12 @@ def home(request):
  
     return render(request, "producto/index.html", context1)
 
-
+#CREAR PRODUCTOS
 def crearproductos(request):
     c1 = models.Categoría(nombre="Limpieza")
-    c2 = models.Categoría(nombre="Cerveza")
-    c3= models.Categoría(nombre="Frutas")
     c1.save()
-    c2.save()
-    c3.save()
     p1 = models.Producto(nombre="Fabuloso", categoria=c1)
-    p2 = models.Producto(nombre="Pilsen", categoria=c2)
-    p3 = models.Producto(nombre="Manzana", categoria=c3)
     p1.save()    
-    p2.save()
-    p3.save()
     return redirect("producto:index")
 
 def busqueda(request):

@@ -1,17 +1,41 @@
 {% extends 'core/base.html' %}
 
 {% block contenido_titulo %}
- Productos
+    Productos
 {% endblock contenido_titulo %}
 
- 
 {% block contenido %}
-        
-{% for producto in productos %}
-   <h1> {{ producto.nombre }} </h1>
-   <p> {{ producto.categoria }} </p>
-{% endfor %}
+    <div class="container">
+        <div class="row">
+            {% for producto in productos %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ producto.nombre }}</h5>
+                            <p class="card-text">{{ producto.categoria }}</p>
+                            
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12">
+          <a href="http://127.0.0.1:8000/producto/crear/" class="btn btn-primary">Agregar Producto </a>
+          <a href="http://127.0.0.1:8000/producto/crearc/" class="btn btn-warning">Agregar Categoría </a>
+      </div>
+  </div>
+ </div>
+
+   
+
+
 
 {% endblock contenido %}
- 
+
+
 

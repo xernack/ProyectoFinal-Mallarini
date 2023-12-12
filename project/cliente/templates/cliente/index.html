@@ -1,18 +1,32 @@
 {% extends 'core/base.html' %}
 
 {% block contenido_titulo %}
- Clientes
+    Clientes
 {% endblock contenido_titulo %}
 
 {% block contenido %}
-
-{% for cliente in clientes %}
-<h2> {{ cliente.apellido }} </h2>
-<p> {{ cliente.nombre  }} </p>
-
-
-{% endfor %}
-
+    <div class="container">
+        <div class="row">
+            {% for cliente in clientes %}
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ cliente.apellido }}, {{ cliente.nombre }}</h5>
+                            <p class="card-text">
+                                <!-- Agrega más detalles del cliente aquí si es necesario -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <a href="http://127.0.0.1:8000/cliente/crear" class="btn btn-primary">Agregar Cliente</a>
+        </div>
+    </div>
+   </div>
 {% endblock contenido %}
 
 

@@ -10,5 +10,5 @@ urlpatterns = [
     path("crearproductos/", views.crearproductos,),
     path("busqueda/", views.busqueda),
     path("crear/", views.crear),
-    path("crearc/", views.crearc),
+    path("crearc/", views.crearc)
 ]
