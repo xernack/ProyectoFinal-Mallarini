@@ -1,15 +1,31 @@
 {% extends 'core/base.html' %}
 
 {% block contenido_titulo %}
- CORE
+
 {% endblock contenido_titulo %}
 
  
 {% block contenido %}
-<ul>
-    <li><a href="{% url 'cliente:index' %}">Ir a cliente</a></li>
-    <li><a href="{% url 'producto:index' %}">Ir a producto</a></li>
-</ul>
+<header class="bg-dark py-5">
+   <div class="text-center text-white">
+    <h1 class="display-4 fw-bolder">Compra de todo a través de la web !</h1>
+    <p class="lead fw-normal text-white-50 mb-0">Smart Market</p>
+   </div>
+</header>
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        
+        {% include 'core/card.html' with title="Productos" %} 
+        {% include 'core/card2.html' with title="Clientes" %} 
+         
+                
+            
+        </div>
+    </div>
+</section>
+
 {% endblock contenido %}
 
    
