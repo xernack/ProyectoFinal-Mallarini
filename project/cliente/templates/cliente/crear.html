@@ -4,14 +4,13 @@
  Agregar Cliente
 {% endblock contenido_titulo %}
 
+ 
 {% block contenido %}
-
-   <form method="post">
-    {% csrf_token %}
-    {{form}}
-    <button type="submit"Z>Guardar</button>
-   </form>
-
+        
+<form action="{% url 'cliente:crearcliente' %}" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
+</form>
 
 {% endblock contenido %}
-
+ 

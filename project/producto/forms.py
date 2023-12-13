@@ -12,3 +12,5 @@ class CategoríaForm(forms.ModelForm):
     class Meta:
         model = models.Categoría
         fields = ["nombre"]
+
+

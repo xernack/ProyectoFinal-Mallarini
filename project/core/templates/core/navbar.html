@@ -8,7 +8,7 @@
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'core:index' %}">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'core:about' %}">About</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Market</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Info</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{% url 'producto:index' %}">Productos</a></li>
                         <li><hr class="dropdown-divider" /></li>
@@ -17,13 +17,7 @@
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </button>
-            </form>
+
         </div>
     </div>
 </nav>

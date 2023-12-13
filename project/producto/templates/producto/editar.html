@@ -1,15 +1,15 @@
 {% extends 'core/base.html' %}
 
 {% block contenido_titulo %}
- Crear nuevo Producto
+ Editar Producto
 {% endblock contenido_titulo %}
 
  
 {% block contenido %}
         
-<form action="{% url 'producto:creaproducto' %}" method="POST">{% csrf_token %}
+<form action="{% url 'producto:editar' id %}" method="POST">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Guardar">
+    <input type="submit" value="Editar">
 </form>
 
 {% endblock contenido %}

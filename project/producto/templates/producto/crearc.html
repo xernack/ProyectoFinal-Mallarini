@@ -1,18 +1,15 @@
 {% extends 'core/base.html' %}
 
 {% block contenido_titulo %}
- Crear Categoria
+ Crear nueva Categoría
 {% endblock contenido_titulo %}
 
  
-{% block contenido %}
+{% block contenido2 %}
         
-<form action="post">
-    {% csrf_token %}
-    {{form}}
-    <button type="submit">Guardar</button>
-
+<form action="{% url 'producto:creacategoria' %}" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
 </form>
 
-{% endblock contenido %}
-
+{% endblock contenido2 %}

@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block contenido_titulo %}
+ Editar Cliente
+{% endblock contenido_titulo %}
+
+ 
+{% block contenido %}
+        
+<form action="{% url 'cliente:editar' id %}" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Editar">
+</form>
+
+{% endblock contenido %}

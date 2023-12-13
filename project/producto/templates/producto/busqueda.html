@@ -1,18 +1,29 @@
 {% extends 'core/base.html' %}
 
 {% block contenido_titulo %}
- BUSQUEDA PRODUCTOS
+    Búsqueda de Productos
 {% endblock contenido_titulo %}
 
- 
 {% block contenido %}
-        
-<h2>Producto Nombre</h2>
-{% for producto in producto_nombre %}
-   <h1> {{ producto }} </h1>
-  
-{% endfor %}
+    <div class="container">
+        <div class="row">
+            {% for producto in producto_nombre %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ producto.nombre }}</h5>
+                            <p class="card-text">{{ producto.categoria }}</p>
+                            
+                               
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
+  
 {% endblock contenido %}
- 
+
 
