@@ -6,6 +6,11 @@
 
  
 {% block contenido %}
+{% if mensaje %}
+    <div class="alert alert-warning mt-3" role="alert">
+        {{ mensaje }}
+    </div>
+{% endif %}
 <header class="bg-dark py-5">
    <div class="text-center text-white">
     <h1 class="display-4 fw-bolder">Archiva tú Información en la Web !</h1>

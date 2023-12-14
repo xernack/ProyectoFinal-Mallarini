@@ -91,3 +91,4 @@ def editarproducto(request, id):
             })
         
         return render(request, "producto/editar.html", {"form": form, "id": producto.id})
+    
