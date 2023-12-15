@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block contenido%}
+<!DOCTYPE html>
+ <html lang="en">
+
+ <div>
+    <h6>
+        Editar usuario: {{ usuario }}
+    </h6>
+
+    <div >
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Guardar" >
+        </form>
+    </div>
+
+</div>
+{% endblock contenido %}

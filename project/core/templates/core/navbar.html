@@ -23,7 +23,8 @@
             <ul class="navbar-nav ms-auto">
                 {% if user.is_authenticated %}
                 <div class="navbar-nav">
-                    <span class="nav-item nav-link">{{ user.username }}</span>
+                    <a class="nav-item nav-link" href="{% url 'core:editar-perfil' %}">Editar Perfil {{ user.username }}</a>
+                    <img src="{{ avatar_url }}" alt="Avatar" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover; object-position: center; border: 2px solid #fff;"/>
                     <a class="btn btn-outline-danger nav-item nav-link" href="{% url 'core:logout' %}">Cerrar sesión</a>
                 </div>
             {% else %}
