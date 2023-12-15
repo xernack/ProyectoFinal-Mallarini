@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from . import forms
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 
+#############################     CLASS BASED VIEWS (CBV)     ###########################
+#from django.views.generic import ListView, CreateView, UpdateView, DetailView
+#from django.urls import reverse_lazy
+#from django.contrib.auth.mixins import LoginRequiredMixin
+#########################################################################################
 
 def home(request):
     return render(request, "core/index.html")
@@ -46,15 +51,7 @@ def login_view(request):
             return render(request, "core/index.html", {"mensaje": f"Bienvenido {modelo.username}"})
         else:
             return render(request, "core/login.html", {"form": formulario})
-    
-    
 
-
-
-#####     CLASS BASED VIEWS (CBV)     #####
-
-#from django.views.generic import ListView, CreateView, UpdateView, DetailView
-#from django.urls import reverse_lazy
-#from django.contrib.auth.mixins import LoginRequiredMixin
-
-############################################
+def view_logout(request):
+    logout(request)
+    return render(request,"core/logout.html")    

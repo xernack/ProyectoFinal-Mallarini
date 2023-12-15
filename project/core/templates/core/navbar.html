@@ -19,11 +19,19 @@
                 </li>
             </ul>
 
-            <!-- Aquí se han añadido las clases para alinear a la derecha -->
+            <!-- Aqui añado las clases a la derecha -->
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'core:registro' %}">Registrarse</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'core:login' %}">Login</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'core:logout' %}">Logout</a></li>
+                {% if user.is_authenticated %}
+                <div class="navbar-nav">
+                    <span class="nav-item nav-link">{{ user.username }}</span>
+                    <a class="btn btn-outline-danger nav-item nav-link" href="{% url 'core:logout' %}">Cerrar sesión</a>
+                </div>
+            {% else %}
+                <div class="navbar-nav">
+                    <a class="btn btn-outline-primary nav-item nav-link" href="{% url 'core:login' %}">Iniciar sesión</a>
+                    <a class="btn btn-outline-success nav-item nav-link" href="{% url 'core:registro' %}">Registrarse</a>
+                </div>
+            {% endif %}
             </ul>
         </div>
     </div>
